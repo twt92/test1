@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=Edge,chrome=1">
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/json2.js"></script>
+    <script type="text/javascript" src="js/rebuilder.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrapnew.css">
+    <link rel="stylesheet" href="css/customer.css">
+    <link rel="icon" href="image/titlelogo.png" type="image/x-icon">
+    <title>客户需求信息库-首页</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="blank">
+        <div class="col-md-6 hometitle1">
+          <img src="image/logo.png" alt="logo" class="logo">
+          <p class="logo-text">技术企划云首页</p>
+        </div>
+        <div class="col-md-6">
+          <a href="http://192.168.8.107:8000/12345/" target="_blank"><img src="image/newpage.png" alt="新建" class="newpage" title="新建客户信息" onmouseover="overShow()" onmouseout="outHide()"></a>
+          <div id="showDiv"></div>
+        </div>
+      </div>
+
+      <div class="hometitle3">
+        <img src="image/customer-logo.png" alt="customer-logo" class="customer-logo">
+        <p class="customer-logo-text">客户需求信息</p>
+      </div>
+
+      <div class="line">
+      </div>
+
+      <div class="selected">
+        <dl>
+          <dt style="padding-top: 2px;">日期</dt>
+          <dd>
+            <table class="datetitle">
+              <tr>
+                <th><a href="#" value="DAll" name="DAll" id="date-selectAll" class="hasBeenSelected">全部</a></th>
+                <th>
+                  <input type="date" class="starttime" name="starttime" style="width: 140px; margin-left:65px; margin-right: 10px;" oninput="delClassName()">-<input type="date" class="endtime" name="endtime" style="width: 140px; margin-left:10px" oninput="delClassName()" onchange="check()">
+                </th>
+              </tr>
+            </table>
+          </dd>
+        </dl>
+        <dl>
+          <dt>产品别</dt>
+          <dd>
+            <table class="product-table">
+              <tr>
+                <th><a href="#" id="product-selectAll" class="hasBeenSelected" name="PAll" value="PAll">全部</a></th>
+                <th><a href="javascript:void(0)" value="" name="">MBL</a></th>
+                <th><a href="javascript:void(0)" value="" name="">TPC</a></th>
+                <th><a href="javascript:void(0)" value="" name="">NB</a></th>
+                <th><a href="javascript:void(0)" value="" name="">MNT</a></th>
+                <th><a href="javascript:void(0)" value="" name="">TV</a></th>
+                <th><a href="javascript:void(0)" value="" name="">VR/AR</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Automotive</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Smart Home</a></th>
+              </tr>
+            </table>
+          </dd>
+        </dl>
+        <dl>
+          <dt>客户</dt>
+          <dd>
+            <table class="customer-table">
+              <tr>
+                <th><a href="javascript:void(0)" id="customer-selectAll" class="hasBeenSelected" name="CAll" value="CAll" style="margin-left: 20px">全部</a></th>
+              </tr>
+              <tr>
+                <th style="font-weight: normal">中国大陆</th>
+                <th><a href="javascript:void(0)" value="" name="">Huawei</a></th>
+                <th><a href="javascript:void(0)" value="" name="">OPPO</a></th>
+                <th><a href="javascript:void(0)" value="" name="">VIVO</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Lenovo</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Haier</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Hisense</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Skyworth</a></th>
+                <th><a href="javascript:void(0)" value="" name="">TIMI</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Changhong</a></th>
+                <th><a href="javascript:void(0)" value="" name="">KONKA</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Nubia</a></th>
+              </tr>
+              <tr>
+                <th></th>
+                <th><a href="javascript:void(0)" value="" name="">Coolpad</a></th>
+                <th><a href="javascript:void(0)" value="" name="">LePhone</a></th>
+                <th><a href="javascript:void(0)" value="" name="">ZTE</a></th>
+                <th><a href="javascript:void(0)" value="" name="">360</a></th>
+                <th><a href="javascript:void(0)" value="" name="">BOE VT</a></th>
+                <th><a href="javascript:void(0)" value="" name="">IMOO</a></th>
+                <th><a href="javascript:void(0)" value="" name="">TINNO</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Solution Provider</a></th>
+              </tr>
+              <tr>
+                <th style="font-weight: normal">中国台湾</th>
+                <th><a href="javascript:void(0)" value="" name="">Acer</a></th>
+                <th><a href="javascript:void(0)" value="" name="">AmTRAN</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Asus</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Compal</a></th>
+                <th><a href="javascript:void(0)" value="" name="">LCFC</a></th>
+                <th><a href="javascript:void(0)" value="" name="">MSI</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Quanta</a></th>
+                <th><a href="javascript:void(0)" value="" name="">TPV</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Visteon</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Vestel</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Wistron</a></th>
+
+              </tr>
+
+              <tr>
+                <th style="font-weight: normal">日韩</th>
+                <th><a href="javascript:void(0)" value="" name="">SEC</a></th>
+                <th><a href="javascript:void(0)" value="" name="">LGE</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Sony</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Toshiba</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Fujitsu</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Panasonic</a></th>
+                <th><a href="javascript:void(0)" value="" name="">NEC</a></th>
+                <th><a href="javascript:void(0)" value="" name="">Funai</a></th>
+              </tr>
+            </table>
+          </dd>
+        </dl>
+        <dl style="display: flex;" class="tech-area">
+          <dt>技术点</dt>
+          <dd><a href="#" id="tech-selectAll" class="hasBeenSelected" value="TAll" name="TAll">全部</a></dd>
+          <dd style="display: flex;">
+            <div class="techarea floatleft" style="width: 180px">
+              <center>
+                <header>Picture</header>
+                <p style="float:left">
+                  <a href="javascript:void(0)" value="" name="">High PPI</a><br />
+                  <a href="javascript:void(0)" value="" name="">W.C.G</a><br />
+                  <a href="javascript:void(0)" value="" name="">High CR</a><br />
+                  <a href="javascript:void(0)" value="" name="">Wide View</a>
+                </p>
+                <p style="float:right">
+                  <a href="javascript:void(0)" value="" name="">High Freq.</a>
+                </p>
+                </center>
+            </div>
+            <div class="techarea floatleft" style="width: 180px">
+              <center><header>POF</header>
+                <p style="float:left">
+                  <a href="javascript:void(0)" value="" name="">Ultra Slim</a><br />
+                  <a href="javascript:void(0)" value="" name="">Curved</a><br />
+                  <a href="javascript:void(0)" value="" name="">Narrow Border</a><br />
+                  <a href="javascript:void(0)" value="" name="">Second Display</a>
+                </p>
+                <p style="float:right">
+                  <a href="javascript:void(0)" value="" name="">Wireless</a><br />
+                  <a href="javascript:void(0)" value="" name="">Freeform</a><br />
+                  <a href="javascript:void(0)" value="" name="">Flexible</a>
+                </p>
+              </center>
+            </div>
+            <div class="techarea floatleft" style="width: 180px">
+              <center><header>PAS</header>
+                <p style="float:left">
+                  <a href="javascript:void(0)" value="" name="">3D</a><br />
+                  <a href="javascript:void(0)" value="" name="">Active Pen</a><br />
+                  <a href="javascript:void(0)" value="" name="">Touch</a>
+                </p>
+                <p style="float:right">
+                  <a href="javascript:void(0)" value="" name="">Privacy</a><br />
+                  <a href="javascript:void(0)" value="" name="">Fingerprint</a><br />
+                  <a href="javascript:void(0)" value="" name="">Dual View</a>
+                </p>
+                </center>
+              </div>
+            <div class="techarea" style="width: 100px">
+              <center><header>Power</header>
+              <p>
+              <a href="javascript:void(0)" value="" name="">Logic</a><br />
+              <a href="javascript:void(0)" value="" name="">BLU</a>
+              </p>
+              </center>
+            </div>
+            <div class="techarea" style="width: 100px">
+              <center><header>Price</header>
+                <p>
+                <a href="javascript:void(0)" value="" name="">PNL</a><br />
+                <a href="javascript:void(0)" value="" name="">MDL</a><br />
+                <a href="javascript:void(0)" value="" name="">Process</a>
+                </p>
+                </center>
+            </div>
+            <div class="techarea" style="width: 100px">
+              <center><header>Health</header>
+                <a href="javascript:void(0)" value="" name="">De-Blue</a></center>
+            </div>
+            <div class="techarea techarea-noborder" style="width: 100px">
+              <center><header style="white-space: nowrap">New Display</header>
+                <p>
+                <a href="javascript:void(0)" value="" name="">OLED</a><br />
+                <a href="javascript:void(0)" value="" name="">MicroLED</a>
+                </p>
+                </center>
+            </div>
+          </dd>
+        </dl>
+      </div>
+      <center><button type="button" name="clearAll" class="clearAll" onclick="clearAll()">重置</button>
+        <button type="button" name="shaixuan" class="shaixuan" onclick="tostringAndSubmit()">筛选</button>
+      </center>
+      <div id="content">
+        <table id="selectedResult">
+          <tr></tr>
+        </table>
+        <div id="barcon" name="barcon"></div>
+      </div>
+    <script type="text/javascript" src="js/customer.js"></script>
+  </body>
+</html>
